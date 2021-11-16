@@ -1,0 +1,51 @@
+<image src="../images/bg5.jpg" class="bcg" style="z-index: -1;" mode="aspectFill"></image>
+<!-- 搜索 -->
+<view class="header">
+  <view class='search'>
+    <view class='wrapper'>
+      <image src='../images/search.png'></image>
+      <input bindinput="bindinput" placeholder-class='placeholderClass' type="text" bindtap="goSearch" placeholder='搜索书名、作者' style="width: 78%;"></input>
+    </view>
+  </view>
+</view> 
+<!-- 轮播 -->
+<view class="swiper-container">
+  <swiper indicator-dots autoplay="true" interval="5000" duration="1000" bindchange="bindchange" style="height: 29vh;">
+    <block wx:for="{{background}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item.src}}" mode="scaleToFill" class="pic"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 主体 -->
+<view class="body">
+  <view class="head">
+    <!--导航条-->  
+    <view class="navbar">  
+      <text wx:for="{{navbars}}"  data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}"  bindtap="navbarTap">{{item.text}}</text>  
+    </view>
+  </view>
+  <!-- 书 -->
+  <view class="book" wx:if="{{book[curIndex].ishaveChild}}">
+    <navigator class="row"  wx:for="{{book[curIndex].children}}" wx:key="id" style=" border-bottom: 1px solid #000;" url="{{item.url}}">
+    <!-- 图片 -->
+      <view class="pic" style="height: 300rpx; width: 30%;">
+        <image src="{{item.pic}}" style="width: 200rpx; height: 250rpx; margin-top: 20rpx;"></image>
+      </view>
+      <!-- 字体 -->
+      <view class="text">
+        <view class="BName">{{item.name}}</view>
+        <view class="Bauthor" >{{item.author}} <text> 著</text></view>
+        <view class="Bmoney">￥{{item.money}}</view>
+      </view>
+      <!-- 购物车 -->
+      <!-- <view class="car {{carTab==index ? 'active':''}}" data-car="{{index}}"  bindtap="carTap">
+        <image src="../images/cart.png" style="width: 50rpx; height: 50rpx;"></image>
+      </view> -->
+    </navigator>
+  </view>
+  <view wx:else class="null">
+    该分类暂无数据
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="centent_title" tap="open_that" data-index="{{index}}">
+
+<view class="title">使 用 指 南</view>
+
+<view class="subject">书籍购买</view>
+<view class="content">用户可以直接上搜索想要的书籍，选择品相分级，并一键下单购买。</view>
+
+<view class="subject" >书籍赏金</view>
+<view class="content">用户可以上传图片照片和描述，发布图书寻找需求，系统将自动搜索并匹配一旦有符合要求的书本即刻推荐给用户。</view>
+
+<view class="subject" >分享功能</view>
+<view class="content">用户分享小程序给好友并产生交易后，即可获得一定的积分和代金券，方便用户下次再平台购书抵扣。</view>
+
+<view class="subject" >书籍售卖</view>
+<view class="content">售卖图书有两类方式：一类是：书籍售卖是用户直接通过平台定价，用户可以将书籍扫描拍摄上传后台，平台收到书籍并审核通过后，即可打款到用户账户，另一类是：用户自行定价卖书，买家和卖家直接交易。</view>
+
+<view class="subject" >扫码获价</view>
+<view class="content">扫描书籍的ISBN码，即可查看图书的实时收购价，让用户了解图书的市场价格。</view>
+
+<!-- <image hidden="{{item.isTrue==true}}" src=""></image>
+<image hidden="{{item.isTrue==false}}" src=""></image> -->
+
+</view>
+<!-- <view class="content_detail" hidden="{{!item.isTrue}}">
+<text>{{item.content}}</text>
+</view> -->

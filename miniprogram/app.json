@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "page/index/index",
+    "page/mine/index",
+    "page/search/index",
+    "page/GuidePage/GuidePage",
+    "page/aboutUs/index",
+    "page/AddressManage/AddAddress",
+    "page/AddressManage/AddressManage",
+    "page/MyOrderPage/MyOrderPage",
+    "page/ShoppingCart/ShoppingCart",
+    "page/ClassifyPage/Classify",
+    "page/DetailPage/Detail",
+    "page/LoginPage/LoginPage"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "text": "首页",
+        "iconPath": "./page/images/home_page_y.png",
+        "selectedIconPath": "./page/images/home_page_n.png"
+      },
+      {
+        "pagePath": "page/ClassifyPage/Classify",
+        "text": "分类",
+        "iconPath": "./page/images/choice_n.png",
+        "selectedIconPath": "./page/images/choice_y.png"
+      },
+      {
+        "pagePath": "page/ShoppingCart/ShoppingCart",
+        "text": "购物车",
+        "iconPath": "./page/images/shopping_select.png",
+        "selectedIconPath": "./page/images/Shopping.png"
+      },
+      {
+        "pagePath": "page/mine/index",
+        "text": "我的",
+        "iconPath": "./page/images/my_n.png",
+        "selectedIconPath": "./page/images/my_y.png"
+      }
+    ]
+  }
+}

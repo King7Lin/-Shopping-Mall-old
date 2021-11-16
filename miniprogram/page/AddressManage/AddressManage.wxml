@@ -1,0 +1,24 @@
+<scroll-view class="scroll" scroll-y="true">
+  <!--wx:for="{{addressList}}"-->
+  <view>
+    <view class="product-name-wrap">
+      <view class="ui-list-item-info">{{item.consignee}}迪迦奥特曼
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text> {{item.mobile}}1555******
+      </view>
+      <view class="ui-list-item-address">
+        {{item.address}}广东机电职业技术学院 北校区 <p>{{item.transportDay}}图文楼506</p>
+      </view>
+      <!--默认和删除地址-->
+      <view class="ui-list-item-time">
+        <checkbox class="weui-agree__checkbox-check" aria-labelledby="js_agree_txt js_agree_link" />
+        <i class="weui-agree__checkbox"></i>
+        <span class="weui-agree__text"><text aria-hidden="true" id="js_agree_txt">默认</text></span>
+        <p class="ui-list-item-del" data-id="{{index}}" bindtap="delAddress">删除</p>
+      </view>
+      <view class="separate"></view>
+    </view>
+  </view>
+</scroll-view>
+<view class="add-address" bindtap="addAddress">
+  <image class="add-img" src="images/add.jpg"></image>新增地址
+</view>

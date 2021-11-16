@@ -1,0 +1,66 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "page/mine/index",
+          "pathName": "page/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/GuidePage/GuidePage",
+          "pathName": "page/GuidePage/GuidePage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/LoginPage/LoginPage",
+          "pathName": "page/LoginPage/LoginPage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/aboutUs/index",
+          "pathName": "page/aboutUs/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/AddressManage/AddressManage",
+          "pathName": "page/AddressManage/AddressManage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/MyOrderPage/MyOrderPage",
+          "pathName": "page/MyOrderPage/MyOrderPage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/ShoppingCart/ShoppingCart",
+          "pathName": "page/ShoppingCart/ShoppingCart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/aboutUs/index",
+          "pathName": "page/aboutUs/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

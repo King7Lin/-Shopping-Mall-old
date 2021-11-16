@@ -1,0 +1,15 @@
+.title{
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: x-large;
+}
+.subject{
+    font-size: larger;
+    text-align: center;
+    background-color: chocolate;
+    padding: 5rpx;
+}
+.content{
+    margin: 0 5%;
+}
