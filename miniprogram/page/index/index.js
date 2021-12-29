@@ -1,93 +1,46 @@
 Page({
   data: {
-    content:'宏伟的教学楼',
     background:[
-      {src:'../images/11.jpeg',content:'宏伟的教学楼'},
-      {src:'../images/22.jpeg',content:'电子实训楼 '},
-      {src:'../images/33.jpeg',content:'图文信息楼'},
+      {src:'../images/11.jpeg'},
+      {src:'../images/22.jpeg'},
+      {src:'../images/33.jpeg'},
     ],
-    navbars:[
-      {text:'最新上架'},
-      {text:'压箱好书'},
-      {text:'科幻'},
-      {text:'历史'},
-      {text:'经济'},
-    ],
-    book:[
-      {
-      cate_id: 1,
-      ishaveChild: true,
-      children:[{
-        pic:'../images/wanli.jpeg',
-        name:'万历十五年',
-        author:'黄仁宇',
-        money:'11.5',
-        url:'/page/DetailPage/Detail'},
-        {pic:'../images/renlei.jpeg',
-        name:'人类简史',
-        author:'尤瓦尔·赫拉利',
-        money:'30.6',
-        url:'/page/DetailPage/Detail'},
-        {pic:'../images/xiaodao.jpeg',
-        name:'小岛经济学',
-        author:'彼得·希夫',
-        money:'21.6',
-        url:'/page/DetailPage/Detail'},] 
-    },
-    {
-      cate_id: 2,
-      ishaveChild: true,
-      children:[
-          {pic:'../images/juwairen.jpeg',
-          name:'局外人',
-          author:'阿尔贝·加缪',
-          money:'18.5',
-          url:'/page/DetailPage/Detail'},
-          {pic:'../images/huozhe.jpeg',
-          name:'活着',
-          author:'余华',
-          money:'15.2',
-          url:'/page/DetailPage/Detail'},
-          {pic:'../images/bailuyuan.jpeg',
-          name:'白鹿原',
-          author:'陈忠实',
-          money:'39.8',
-          url:'/page/DetailPage/Detail'},
-      ],},
-      {
-      cate_id: 3,
-      ishaveChild: true,
-      children:[
-        {pic:'../images/jiegouxing.jpeg',
-        name:'结构性改革',
-        author:'黄奇帆',
-        money:'44',
-        url:'/page/DetailPage/Detail'},
-        {pic:'../images/ziben.jpeg',
-        name:'资本论',
-        author:'卡尔·海因里希·马克思',
-        money:'38',
-        url:'/page/DetailPage/Detail'},
-        {pic:'../images/zui.jpeg',
-        name:'追风筝的人',
-        author:'卡勒德·胡赛尼',
-        money:'21.3',
-        url:'/page/DetailPage/Detail'},
-      ]
-    },
-    {
-      cate_id: 4,
-      ishaveChild: false,
-    },
-    {
-      cate_id: 5,
-      ishaveChild: false,
-    }
-    ],
+    // navbars:[
+    //   '热门推荐',
+    //   '压箱好书',
+    // ],
     currentTab: 0,
     active:null,
     carTab:null,
-    curIndex:0
+    curIndex:0,
+  },
+  async onLoad(){
+    let book=[]
+    let navbars=[]
+    let hot = await wx.cloud.callFunction({
+      name:'index_random'
+    })
+    console.log(hot)
+    book.push(hot.result.arr)
+    navbars.push('热门推荐')
+    let Tbook = await wx.cloud.callFunction({
+      name:'index_time'
+    })
+    console.log(Tbook)
+    book.push(Tbook.result.Tbook)
+    navbars.push('压箱好书')
+    let books = await wx.cloud.callFunction({
+      name:'index'
+    })
+    console.log(books)
+    for(let i=0;i<books.result.books.length;i++){
+      book.push(books.result.books[i])
+      navbars.push(books.result.list[i]._id)
+    }
+    this.setData({
+      book,
+      navbars
+    })
   },
   goSearch(){ //搜索框跳转
     wx.navigateTo({
@@ -109,13 +62,5 @@ Page({
         curIndex:e.currentTarget.dataset.idx,
       })
     },
-    // carTap(e){
-    //   console.log(e)
-    //   console.log(typeof e.currentTarget.dataset.car)
-    //   this.setData({ 
-    //     carTab:e.currentTarget.dataset.car,
-    //     active:'active'
-    //   })
-    // }
-
+    
 })

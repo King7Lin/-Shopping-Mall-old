@@ -32,7 +32,7 @@
       },
       {
         "pagePath": "page/ClassifyPage/Classify",
-        "text": "分类",
+        "text": "更多",
         "iconPath": "./page/images/choice_n.png",
         "selectedIconPath": "./page/images/choice_y.png"
       },
