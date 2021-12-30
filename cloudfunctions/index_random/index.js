@@ -22,8 +22,6 @@ exports.main = async (event, context) => {
       arr0.splice(num,1)
     }
   }
-  console.log(res)
-  console.log('arr',arr)
   return {
     arr
   }

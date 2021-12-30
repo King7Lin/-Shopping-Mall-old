@@ -15,6 +15,9 @@ Page({
     curIndex:0,
   },
   async onLoad(){
+    wx.showLoading({
+      title: '正在加载中',
+    })
     let book=[]
     let navbars=[]
     let hot = await wx.cloud.callFunction({
@@ -23,12 +26,14 @@ Page({
     console.log(hot)
     book.push(hot.result.arr)
     navbars.push('热门推荐')
+
     let Tbook = await wx.cloud.callFunction({
       name:'index_time'
     })
     console.log(Tbook)
     book.push(Tbook.result.Tbook)
     navbars.push('压箱好书')
+
     let books = await wx.cloud.callFunction({
       name:'index'
     })
@@ -36,6 +41,11 @@ Page({
     for(let i=0;i<books.result.books.length;i++){
       book.push(books.result.books[i])
       navbars.push(books.result.list[i]._id)
+    }
+    if(hot.errMsg.indexOf('ok')>-1&&Tbook.errMsg.indexOf('ok')>-1&&books.errMsg.indexOf('ok')>-1){
+      wx.hideLoading({
+        success: (res) => {},
+      })
     }
     this.setData({
       book,
