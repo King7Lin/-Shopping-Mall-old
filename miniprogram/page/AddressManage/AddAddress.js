@@ -17,7 +17,10 @@ Page({
             campusIndex:e.detail.value
         })
     },
-    saveAddress:function(e){
+    save(e){
+       console.log(e); 
+    },
+     saveAddress:function(e){
         var transportDay = e.detail.value.transportDay
         var consignee = e.detail.value.consignee
         var address = e.detail.value.address

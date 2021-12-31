@@ -13,7 +13,7 @@
         <checkbox class="weui-agree__checkbox-check" aria-labelledby="js_agree_txt js_agree_link" />
         <i class="weui-agree__checkbox"></i>
         <span class="weui-agree__text"><text aria-hidden="true" id="js_agree_txt">默认</text></span>
-        <p class="ui-list-item-del" data-id="{{index}}" bindtap="delAddress">删除</p>
+        <p class="ui-list-item-del" data-id="{{item._id}}" bindtap="delAddress">删除</p>
       </view>
       <view class="separate"></view>
     </view>

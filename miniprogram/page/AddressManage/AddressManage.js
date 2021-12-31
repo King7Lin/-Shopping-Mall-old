@@ -15,5 +15,13 @@ Page({
     addAddress:function(){
         wx.navigateTo({ url: 'AddAddress' });
     },
-
+    delAddress:function(e){
+        console.log(e);
+        wx.cloud.callFunction({
+            name:'del_address',
+            data:{
+                id:e.currentTarget.dataset.id
+            }
+        })
+    }
 })
