@@ -1,12 +1,12 @@
 <scroll-view class="scroll" scroll-y="true">
   <!--wx:for="{{addressList}}"-->
   <view>
-    <view class="product-name-wrap">
-      <view class="ui-list-item-info">{{item.consignee}}迪迦奥特曼
-        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text> {{item.mobile}}1555******
+    <view class="product-name-wrap" wx:for="{{addressArr[0]}}" wx:key="this">
+      <view class="ui-list-item-info">{{item.consignee}}
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text> {{item.mobile}}
       </view>
       <view class="ui-list-item-address">
-        {{item.address}}广东机电职业技术学院 北校区 <p>{{item.transportDay}}图文楼506</p>
+        {{item.address}}<p>{{item.transportDay}}</p>
       </view>
       <!--默认和删除地址-->
       <view class="ui-list-item-time">

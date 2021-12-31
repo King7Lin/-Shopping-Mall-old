@@ -18,13 +18,29 @@ Page({
         })
     },
     saveAddress:function(e){
-        console.log(e)
+        var transportDay = e.detail.value.transportDay
         var consignee = e.detail.value.consignee
-        var cityName = e.detail.value.cityName
+        var address = e.detail.value.address
         var mobile = e.detail.value.mobile
+        wx.cloud.callFunction({
+            name: 'add_address',
+            data:{
+                transportDay:transportDay,
+                consignee:consignee,
+                address:address,
+                mobile:mobile
+            },
+            success:function(res){
+                console.log(res);
+                console.log(address);
+            }
+        })
+
+        console.log(e)
+        
         this.setData({
             consignee,
-            cityName,
+            address,
             mobile
         })
     },

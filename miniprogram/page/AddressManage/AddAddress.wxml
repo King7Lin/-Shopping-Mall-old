@@ -45,5 +45,5 @@
       <input class="weui-input" name="address" placeholder="请输入收货人详细地址" />
     </view>
   </view>
-  <button class="weui-btn" type="primary" form-type="submit">保存</button>
+  <button class="weui-btn" type="primary" form-type="submit" bindtap="save">保存</button>
 </form>
