@@ -12,10 +12,16 @@ exports.main = async (event, context) => {
   const book = db.collection('book')
   // const $ = db.command.aggregate
   let book1 = await book.get()
+  const $ = db.command.aggregate
   let res = await book.aggregate()
   .group({
-    _id:'$type'
+    _id:'$type',
+    sum:$.sum(1)
   })
+  .sort({
+    sum:-1
+  })
+  .limit(3)
   .end()
   console.log(res)
   // console.log(book1)
