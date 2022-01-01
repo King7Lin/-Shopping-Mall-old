@@ -1,5 +1,5 @@
 Page({
-    async onLoad(){
+    async onShow(){
         let find_address = await wx.cloud.callFunction({
             name:'find_address'
           })
@@ -11,17 +11,21 @@ Page({
           this.setData({
               addressArr
           })
+          
     },
     addAddress:function(){
         wx.navigateTo({ url: 'AddAddress' });
+        
     },
-    delAddress:function(e){
+    async delAddress(e){
         console.log(e);
-        wx.cloud.callFunction({
+        await wx.cloud.callFunction({
             name:'del_address',
             data:{
                 id:e.currentTarget.dataset.id
             }
         })
-    }
+        this.onShow()
+    },
+    
 })

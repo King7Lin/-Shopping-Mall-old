@@ -16,6 +16,28 @@ Page({
         "../images/bailuyuan.jpeg",
       ],
     },
+    async onLoad(option){
+      wx.showLoading({
+        title: '正在加载中',
+      })
+      console.log(option)
+     let res =  await wx.cloud.callFunction({
+        name: 'detail',
+        data:{
+           id:option.id 
+        },
+    })
+    console.log(res)
+    this.setData({
+      detail:res.result.data[0],
+      pic:res.result.data[0].detail
+    })
+    if(res.errMsg.indexOf('ok')>-1){
+      wx.hideLoading({
+        success: (res) => {},
+      })
+    }
+    },
     //预览图片
     previewImage: function (e) {
       var current = e.target.dataset.src;

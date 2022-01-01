@@ -1,9 +1,4 @@
-// pages/AddressManage/AddAddress.js
 Page({
-    
-    /**
-     * 页面的初始数据
-     */
     data: {
         consignee:'迪迦奥特曼',
         transportValues: ["广东机电职业技术学院"],
@@ -17,15 +12,12 @@ Page({
             campusIndex:e.detail.value
         })
     },
-    save(e){
-       console.log(e); 
-    },
-     saveAddress:function(e){
+     async saveAddress(e){
         var transportDay = e.detail.value.transportDay
         var consignee = e.detail.value.consignee
         var address = e.detail.value.address
         var mobile = e.detail.value.mobile
-        wx.cloud.callFunction({
+        await wx.cloud.callFunction({
             name: 'add_address',
             data:{
                 transportDay:transportDay,
@@ -34,9 +26,13 @@ Page({
                 mobile:mobile
             },
             success:function(res){
-                console.log(res);
-                console.log(address);
-            }
+                wx.showToast({
+                  title: '保存成功',
+                }),
+                wx.navigateBack({
+                  delta: 1,
+                })
+            }  
         })
 
         console.log(e)
