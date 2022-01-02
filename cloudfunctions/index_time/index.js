@@ -16,7 +16,7 @@ exports.main = async (event, context) => {
 
   let res = await book.aggregate()
   .sort({
-    time:-1
+    time:1
   })
   .limit(10)
   .end()

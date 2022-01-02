@@ -11,7 +11,7 @@ exports.main = async (event, context) => {
   console.log(event)
   return await send.add({
     data:{
-      name:event.detail,
+      name:event.name,
       type:event.type,
       detail:event.src,
       money:event.price,

@@ -32,7 +32,7 @@
     <navigator class="row"  wx:for="{{book[curIndex]}}" wx:key="id" style=" border-bottom: 1px solid #000;" url="{{item.url}}?id={{item._id}}">
     <!-- 图片 -->
       <view class="pic" style="height: 300rpx; width: 30%;">
-        <image src="{{item.pic}}" style="width: 200rpx; height: 250rpx; margin-top: 20rpx;"></image>
+        <image src="{{item.detail[0]}}" style="width: 200rpx; height: 250rpx; margin-top: 20rpx;"></image>
       </view>
       <!-- 字体 -->
       <view class="text">

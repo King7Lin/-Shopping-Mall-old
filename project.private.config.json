@@ -71,6 +71,12 @@
           "pathName": "page/send/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "page/ClassifyPage/Classify",
+          "query": "",
+          "scene": null
         }
       ]
     }
