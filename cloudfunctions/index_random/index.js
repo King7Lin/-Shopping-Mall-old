@@ -9,7 +9,7 @@ cloud.init({
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const db=cloud.database()
-  const book = db.collection('Hbook')
+  const book = db.collection('book')
 
   let arr=[]
   let res = await book.get()

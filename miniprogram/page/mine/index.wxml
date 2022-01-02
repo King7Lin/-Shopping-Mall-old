@@ -68,4 +68,7 @@
       <image src='../images/my_order.png'></image>
     </view>
   </navigator>
+  <button type="warn" class="send" bindtap="tosend">
+    发布
+  </button>
 </scroll-view>

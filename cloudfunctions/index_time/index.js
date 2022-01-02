@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
 
   const db=cloud.database()
-  const book = db.collection('Tbook')
+  const book = db.collection('book')
   // const $ = db.command.aggregate
   // let res = await book.get()
 

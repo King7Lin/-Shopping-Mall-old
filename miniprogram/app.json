@@ -11,7 +11,8 @@
     "page/ShoppingCart/ShoppingCart",
     "page/ClassifyPage/Classify",
     "page/DetailPage/Detail",
-    "page/LoginPage/LoginPage"
+    "page/LoginPage/LoginPage",
+    "page/send/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
