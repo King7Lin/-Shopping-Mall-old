@@ -45,7 +45,7 @@ page{
    .login-img{ 
    
     margin-top: 50px;
-   
+    border-radius: 20rpx;
     width: 80px;
    
     height: 80px;

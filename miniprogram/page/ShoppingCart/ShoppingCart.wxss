@@ -185,3 +185,13 @@
   padding-right: 20rpx;
   position: relative;
 }
+.no{
+  position: absolute;
+  bottom: 50%;
+  left: 20%;
+  color: red;
+  font-weight: bold;
+  font-size: 100rpx;
+  /* padding: 25%; */
+  /* margin: 25%; */
+}

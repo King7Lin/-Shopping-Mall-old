@@ -42,7 +42,7 @@
   <textarea placeholder="请输入商品简介（80字）" maxlength="80" style="" name="detail"></textarea>
 </view>
 <scroll-view class="img" scroll-y="true">
-  <block wx:for="{{img}}">
+  <block wx:for="{{img}}" wx:key="this">
     <image src="{{item}}" style="width:80rpx;height:80rpx"></image>
     <button size="mini" type="warn" plain="true" bindtap="delete" data-id="{{index}}" data-src="{{item}}">删除图片</button>
   </block>

@@ -1,3 +1,4 @@
+<view wx:if="{{login==true}}">
 <view class="product-container"><!--商品选择页-->
 	<view class="product-list" style='height:{{height}}px'>
 		<view class="product-item" wx:for="{{slideProductList}}" wx:for-index="index" wx:key='slideProductList'>
@@ -44,4 +45,8 @@
 			</view>
 		</view>
 	</view>
+</view>
+<view wx:else class="no">
+	请登录！！！
+</view>
 

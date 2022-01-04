@@ -77,6 +77,18 @@
           "pathName": "page/ClassifyPage/Classify",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "page/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "page/LoginPage/LoginPage",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -15,6 +15,7 @@ exports.main = async (event, context) => {
   .sort({
     time:-1
   })
+  .limit(12)
   .end()
   return {
     newbook:res.list

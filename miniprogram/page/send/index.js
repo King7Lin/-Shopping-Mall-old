@@ -67,16 +67,19 @@ Page({
   async submit(e){
     let that = this
     console.log(e)
+    const db= wx.cloud.database()
+    const send = db.collection('book')
     if(e.detail.value.name!==""&&e.detail.value.price!==""&&e.detail.value.detail!==""&&that.data.img.length!==0&&e.detail.value.author!==0&&e.detail.value.type!==0){
-      await wx.cloud.callFunction({
-        name:'send',
+      await send.add({
         data:{
           name:e.detail.value.name,
-          price:e.detail.value.price,
-          detail:e.detail.value.detail,
-          src:that.data.img,
+          type:e.detail.value.type,
+          detail:that.data.img,
+          money:e.detail.value.price,
           author:e.detail.value.author,
-          type:e.detail.value.type
+          details:e.detail.value.detail,
+          url:'/page/DetailPage/Detail',
+          time:db.serverDate()
         },
         success:function(res){
           wx.showToast({

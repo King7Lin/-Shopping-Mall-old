@@ -15,8 +15,8 @@
   <!-- sku选择 -->
   <!-- <text bindtap="toggleDialog">请选择购买数量</text> -->
   <view class="separate"></view>
-  <text>商品评价</text>
-  <text class="text-remark">东西还可以，好评~</text>
+  <text style="font-weight: bold;">商品介绍</text>
+  <text class="text-remark">{{detail.details}}</text>
   <view class="separate"></view>
   <text style="font-weight: bold;">商品详情</text>
   <block wx:for="{{pic}}" wx:key="this">

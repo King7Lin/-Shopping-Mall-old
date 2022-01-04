@@ -1,30 +1,31 @@
 <view class="container">
     <view class="login-icon">
-        <image class="login-img" src="../LoginPage/images/tubiao.png"></image>
+        <image class="login-img"  src="../images/11.jpeg"></image>
     </view>
-    <text class="title">机电二手书城</text>
+    <form bindsubmit="formsubmit">
     <view class="login-from">
         <!--手机号-->
         <view class="inputView">
             <image class="nameImage" src="../LoginPage/images/shoujihao.png"></image>
             <label class="loginLab">手机号</label>
-            <input class="inputText" placeholder="请输入手机号" bindinput="phoneInput" />
+            <input class="inputText" name='phoneNumber' placeholder="请输入手机号"  />
         </view>
         <view class="line"></view>
         <!--密码-->
         <view class="inputView">
             <image class="keyImage" src="../LoginPage/images/mima.png"></image>
             <label class="loginLab">密码</label>
-            <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+            <input class="inputText" name='password' password="true" placeholder="请输入密码"  />
         </view>
     <!--按钮-->
         <view class="loginBtnView">
             <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
-                disabled="{{disabled}}" bindtap="login">登录</button>
+                disabled="{{disabled}}" form-type="submit">登录</button>
         </view>
-        <view class="registerBtnView">
+        <!-- <view class="registerBtnView">
             <button class="registerBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
-                disabled="{{disabled}}" bindtap="register">注册</button>
-        </view>
+                disabled="{{disabled}}" bindtap="getUserProfile">授权</button>
+        </view> -->
     </view>
+    </form>
 </view>

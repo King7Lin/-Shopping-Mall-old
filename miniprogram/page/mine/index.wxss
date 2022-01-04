@@ -73,6 +73,3 @@
  .icon navigator{
    flex: 1 0 25%;
  }
- .send{
-   padding: 20rpx;
- }

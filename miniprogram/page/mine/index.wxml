@@ -9,7 +9,7 @@
     <!-- </navigator> -->
     </navigator>
   </view>
-  <navigator url="/page/MyOrderPage/MyOrderPage" class='item'>
+  <navigator url="{{login==true?'/page/MyOrderPage/MyOrderPage':''}}" bindtap="tologin" class='item'>
     <view class='left'>
       我的订单
     </view>
@@ -19,24 +19,24 @@
     </view>
   </navigator>
   <view class='icon'>
-    <navigator url="/pages/order/index?type=1" hover-class="none" >
+    <navigator url="{{login==true?'/page/MyOrderPage/MyOrderPage':''}}" bindtap="tologin" hover-class="none" >
       <image src='../images/pending_payment.png' mode="aspectFit"></image>
       <text>代付款</text>
     </navigator>
-    <navigator url="/pages/order/index?type=2" hover-class="none" >
+    <navigator url="{{login==true?'/page/MyOrderPage/MyOrderPage':''}}" bindtap="tologin" hover-class="none" >
       <image src='../images/pending_delivery.png' mode="aspectFit"></image>
       <text>代发货</text>
     </navigator>
-    <navigator url="/pages/order/index?type=3" hover-class="none" >
+    <navigator url="{{login==true?'/page/MyOrderPage/MyOrderPage':''}}" bindtap="tologin" hover-class="none" >
       <image src='../images/already_shipped.png' mode="aspectFit"></image>
       <text>已发货</text>
     </navigator>
-    <navigator url="/pages/order/index?type=4" hover-class="none" >
+    <navigator url="{{login==true?'/page/MyOrderPage/MyOrderPage':''}}" bindtap="tologin" hover-class="none" >
       <image src='../images/completed.png' mode="aspectFit"></image>
       <text>已完成</text>
     </navigator>
   </view>
-  <navigator url="/page/AddressManage/AddressManage" class='item'>
+  <navigator url="{{login==true?'/page/AddressManage/AddressManage':''}}" bindtap="tologin" class='item'>
     <view class='left'>
       地址管理
     </view>
@@ -52,7 +52,7 @@
       <image src='../images/my_order.png'></image>
     </view>
   </button>
-  <navigator url="/page/aboutUs/index" class='item'>
+  <navigator url="{{login==true?'/page/aboutUs/index':''}}" bindtap="tologin" class='item'>
     <view class='left'>
       关于我们
     </view>
@@ -60,7 +60,7 @@
       <image src='../images/my_order.png'></image>
     </view>
   </navigator>
-  <navigator url="/page/GuidePage/GuidePage" class='item'>
+  <navigator url="{{login==true?'/page/GuidePage/GuidePage':''}}" bindtap="tologin" class='item'>
     <view class='left'>
       使用指南
     </view>
@@ -68,7 +68,7 @@
       <image src='../images/my_order.png'></image>
     </view>
   </navigator>
-  <button type="warn" class="send" bindtap="tosend">
+  <button type="warn" bindtap="tosend">
     发布
   </button>
 </scroll-view>

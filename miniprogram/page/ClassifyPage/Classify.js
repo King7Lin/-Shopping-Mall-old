@@ -4,6 +4,9 @@ Page({
       curIndex: 0
     },
   async onShow(){
+    wx.showLoading({
+      title: '正在加载中',
+    })
     let type = []
     let items = []
     wx.showLoading({

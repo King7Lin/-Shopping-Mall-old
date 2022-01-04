@@ -1,9 +1,9 @@
 <view class="top">
   <view class="topsearch">
     <view class="frame">
-      <input value="{{shoopingtext}}" bindinput="shoppinginput"></input>
+      <input value="{{shoopingtext}}" bindinput="shoppinginput" placeholder="please输入书本名字"></input>
     </view>
-    <text bindtap="search">搜索</text>
+    <button size="mini" bindtap="search" type="primary">搜索</button>
   </view>
 </view>
 <view class="history" wx:if="{{history}}">
@@ -12,16 +12,12 @@
     <!-- <image src="/images/delete.png" mode="widthFix" style="width:5%;" bindtap="cleanhistory"></image> -->
   </view>
   <view class="history_text">
-    <text wx:for="{{newArray}}" wx:key="key" data-text="{{item}}" bindtap="textfz">{{item}}</text>
+    <text wx:for="{{history}}" wx:key="key" data-text="{{item}}" bindtap="textfz">{{item}}</text>
   </view>
 </view>
-<view class="none" wx:if="{{noneview}}">
-  <!-- <image src="/images/null.png" mode="widthFix" style="width:20%"></image> -->
-  <text>抱歉，没有相关商品</text>
-</view>
-<view class='swiper_con' wx:if="{{shoppinglist}}">  
-  <view class='swiper_con_view' wx:for="{{shoopingarray}}" wx:key="id" wx:if='{{item.status=="1"?true:false}}'>
-    <image src="{{item.images}}" mode="widthFix" style="width:100%" data-status="{{item.status}}"></image>
+<view class='swiper_con' wx:if="{{shoppinglist[0]}}">  
+  <navigator class='swiper_con_view' wx:for="{{shoppinglist}}" wx:key="id" url="{{item.url}}?id={{item._id}}">
+    <image src="{{item.detail[0]}}" mode="widthFix" style="width:100%" data-status="{{item.status}}"></image>
     <view style="width:90%;margin:5%;">
       <text style="font-size:24rpx">{{item.title}}</text>
       <view class="swiper_con_view_view">
@@ -32,5 +28,9 @@
         <image src="/images/cart.png" mode="widthFix" style="width:10%;position:relative;left:8%;"></image>
       </view>
     </view>
-  </view>
+  </navigator>
+</view>
+<view class="none" wx:else>
+  <!-- <image src="/images/null.png" mode="widthFix" style="width:20%"></image> -->
+  <text>抱歉，没有相关商品</text>
 </view>
