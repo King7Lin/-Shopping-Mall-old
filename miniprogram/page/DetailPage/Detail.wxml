@@ -26,15 +26,15 @@
 </scroll-view>
 <!-- 底部悬浮栏 -->
 <view class="detail-nav">
-  <button>
+  <button class="bt1">
     <image class="src" bindtap="toCar" src="../images/cart.jpeg" />
   </button>
   <view class="line_nav"></view>
-  <button bindtap="">
-    <image class="src" bindtap="addLike" src="{{isLike?'../images/heart.jpeg':'../images/heart.jpeg'}}" />
+  <button bindtap="" class="bt2"  formType="submit">
+    客服
   </button>
-  <button class="button-green" bindtap="addCar" formType="submit">加入购物车</button>
-  <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
+  <button class="button-green" bindtap="addCar" formType="submit"><text>收藏</text></button>
+  <button class="button-red" bindtap="immeBuy" formType="submit"><text>购买</text></button>
 </view>
 
 
